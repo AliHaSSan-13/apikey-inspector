@@ -4,7 +4,7 @@
 
 apikey-inspector is a universal, privacy-first API key inspector. It allows you to identify, validate, and inspect API keys from major AI providers without risking leakage.
 
-[![PyPI version](https://img.shields.io/pypi/v/apikey-inspector.svg)](https://pypi.org/project/apikey-inspector/)
+[![PyPI version](https://img.shields.io/pypi/v/apikey-inspector)](https://pypi.org/project/apikey-inspector/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
