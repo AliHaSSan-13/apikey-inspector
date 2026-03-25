@@ -71,7 +71,7 @@ apikey inspect sk-proj-1234... --scan
 
 ```bash
 # Clone the repo
-git clone https://github.com/alihassan/apikey-inspector.git
+git clone https://github.com/AliHaSSan-13/apikey-inspector.git
 cd apikey-inspector
 
 # Install in editable mode with dev dependencies
@@ -81,6 +81,8 @@ pip install -e ".[dev]"
 pytest tests/
 ```
 
+
 ## 📜 License
 
 MIT © [Ali Hassan](mailto:alihassan.shahzadmughal@gmail.com)
+
