@@ -2,3 +2,7 @@
 .agent/
 __pycache__/
 docs/
+.pytest_cache/
+.env
+.aider*
+tests/
