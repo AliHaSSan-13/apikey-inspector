@@ -28,3 +28,12 @@ class BaseAdapter(abc.ABC):
     async def inspect(self) -> InspectionResult:
         """Perform provider-specific checks and return the populated InspectionResult."""
         pass
+
+    def handle_network_error(self, e: Exception):
+        """Centralized error handling for network exceptions."""
+        if isinstance(e, httpx.TimeoutException):
+            self.result.errors.append("Connection timed out.")
+        elif isinstance(e, httpx.RequestError):
+            self.result.errors.append(f"Network error: {str(e)}")
+        else:
+            self.result.errors.append(f"Unexpected error: {str(e)}")

@@ -12,9 +12,9 @@ class GoogleAdapter(BaseAdapter):
         self.result.usage_available = False
         
         try:
-            # Google Gemini models endpoint
-            url = f"https://generativelanguage.googleapis.com/v1beta/models?key={self.key}"
-            resp = await self.client.get(url)
+            # Use params to keep the key out of the URL string representation
+            url = "https://generativelanguage.googleapis.com/v1beta/models"
+            resp = await self.client.get(url, params={"key": self.key})
             
             if resp.status_code == 200:
                 self.result.valid = True
@@ -32,9 +32,7 @@ class GoogleAdapter(BaseAdapter):
             else:
                 self.result.errors.append(f"Unexpected status code: {resp.status_code}")
                 
-        except httpx.TimeoutException:
-            self.result.errors.append("Connection timed out.")
-        except httpx.RequestError as e:
-            self.result.errors.append(f"Network error: {str(e)}")
+        except Exception as e:
+            self.handle_network_error(e)
 
         return self.result

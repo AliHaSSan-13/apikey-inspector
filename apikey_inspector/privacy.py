@@ -36,7 +36,8 @@ def redact_sensitive_data(data: dict) -> dict:
     for k, v in data.items():
         if isinstance(v, dict):
             redacted[k] = redact_sensitive_data(v)
-        elif isinstance(v, list):
+        elif isinstance(v, (list, tuple, set)):
+            # Handle collections
             redacted[k] = [redact_sensitive_data(i) if isinstance(i, dict) else i for i in v]
         elif isinstance(k, str) and any(word in k.lower() for word in ['secret', 'token', 'key', 'password']):
             if "password" in k.lower():
