@@ -4,6 +4,12 @@ build-backend = "hatchling.build"
 
 [project]
 name = "apikey-inspector"
+
+keywords = [
+    "api-key", "security-scanner", "openai", "anthropic", "gemini", 
+    "secret-detection", "validation", "automation", "devsecops"
+]
+
 dynamic = ["version"]
 description = "Identify and validate API keys for OpenAI, Anthropic, Gemini, and more with privacy-first masking."
 readme = "README.md"
@@ -55,8 +61,3 @@ target-version = "py39"
 [tool.mypy]
 python_version = "3.9"
 strict = true
-
-keywords = [
-    "api-key", "security-scanner", "openai", "anthropic", "gemini", 
-    "secret-detection", "validation", "automation", "devsecops"
-]
